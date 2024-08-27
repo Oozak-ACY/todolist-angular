@@ -1,0 +1,39 @@
+<div class="container mt-4">
+  <h2>Récapitulatif des Tâches</h2>
+  <table class="table table-bordered table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Tâches à Faire</th>
+        <th scope="col">Tâches Complétées</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <ul class="list-group">
+            @for (todo of todos; track $index; let indexTodos = $index) {
+              @if (!todo.completed) {
+              <li class="list-group-item">
+                {{ todo.task }}
+              </li>
+              }
+            }
+          </ul>
+        </td>
+        
+
+        <td>
+          <ul class="list-group">
+            @for (todo of todos; track $index; let indexTodos = $index) {
+              @if (todo.completed) {
+              <li class="list-group-item" >
+                {{ todo.task }}
+              </li>
+              }
+            }
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
